@@ -1,0 +1,9 @@
+CMake Error at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/tools/cmake/component.cmake:320 (message):
+  Include directory
+  '/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/connection'
+  is not a directory.
+Call Stack (most recent call first):
+  /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/tools/cmake/component.cmake:495 (__component_add_include_dirs)
+  main/CMakeLists.txt:1 (idf_component_register)
+
+

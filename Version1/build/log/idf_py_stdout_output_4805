@@ -1,0 +1,9 @@
+[1/4] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/partition_table/partition-table.bin /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/W_Tech_Wireless_Scanner.bin
+FAILED: esp-idf/esptool_py/CMakeFiles/app_check_size /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/esptool_py/CMakeFiles/app_check_size 
+cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/partition_table/partition-table.bin /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/W_Tech_Wireless_Scanner.bin
+Error: app partition is too small for binary W_Tech_Wireless_Scanner.bin size 0x11bb10:
+  - Part 'factory' 0/0 @ 0x10000 size 0x100000 (overflow 0x1bb10)
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/bootloader.bin
+Bootloader binary size 0x65b0 bytes. 0xa50 bytes (9%) free.
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,82 @@
+--- esp-idf-monitor 1.11.0 on /dev/ttyUSB0 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+--- 0x40080400: _init at ??:?
+--- 0x40110b8a: task_wdt_timeout_handling at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+--- 0x40110fa0: task_wdt_isr at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+--- 0x40083e7d: _xt_lowint1 at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7f3f: uart_ll_get_txfifo_len at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/hal/esp32/include/hal/uart_ll.h:439(inlined by) uart_tx_char at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:190
+--- 0x400d866f: uart_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d907d: console_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_vfs_console/vfs_console.c:83
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x400593af: fflush in ROM
+--- 0x400daf77: serial_read_command at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/interface/serial_interface.c:166
+--- 0x400da7a3: app_main at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c:136
+--- 0x4019a59b: main_task at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/app_startup.c:208
+--- 0x4009156d: vPortTaskWrapper at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+--- 0x40110b8a: task_wdt_timeout_handling at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+--- 0x40110fa0: task_wdt_isr at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+--- 0x40083e7d: _xt_lowint1 at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+--- 0x4000bfed: _xtos_set_intlevel in ROM
+--- 0x400918ca: vPortClearInterruptMaskFromISR at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:560(inlined by) vPortExitCritical at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:514
+--- 0x400913dc: xQueueSemaphoreTake at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1777
+--- 0x4009147e: xQueueTakeMutexRecursive at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:835
+--- 0x40082ef5: lock_acquire_generic at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/newlib/locks.c:146
+--- 0x40082ffd: _lock_acquire_recursive at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/newlib/locks.c:162
+--- 0x40083076: __retarget_lock_acquire_recursive at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/newlib/locks.c:321
+--- 0x4018cfb3: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846
+--- 0x4018689f: printf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c:56
+--- 0x400da79a: app_main at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c:134
+--- 0x4019a59b: main_task at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/app_startup.c:208
+--- 0x4009156d: vPortTaskWrapper at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+--- 0x40110b8a: task_wdt_timeout_handling at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+--- 0x40110fa0: task_wdt_isr at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+--- 0x40083e7d: _xt_lowint1 at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7f35: uart_tx_char at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:188
+--- 0x400d866f: uart_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d907d: console_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_vfs_console/vfs_console.c:83
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x40186849: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x4018fca7: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429(inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x4018fb9e: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774
+--- 0x4018689f: printf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c:56
+--- 0x400daf6b: serial_read_command at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/interface/serial_interface.c:164
+--- 0x400da7a3: app_main at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c:136
+--- 0x4019a59b: main_task at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/app_startup.c:208
+--- 0x4009156d: vPortTaskWrapper at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+--- 0x40110b8a: task_wdt_timeout_handling at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:434
+--- 0x40110fa0: task_wdt_isr at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_system/task_wdt/task_wdt.c:507
+--- 0x40083e7d: _xt_lowint1 at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/xtensa/xtensa_vectors.S:1240
+--- 0x400d7f3f: uart_ll_get_txfifo_len at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/hal/esp32/include/hal/uart_ll.h:439(inlined by) uart_tx_char at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:190
+--- 0x400d866f: uart_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_driver_uart/src/uart_vfs.c:243
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000182a: write in ROM
+--- 0x400d907d: console_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esp_vfs_console/vfs_console.c:83
+--- 0x400d9a06: esp_vfs_write at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/vfs/vfs.c:945
+--- 0x4000bd83: _write_r in ROM
+--- 0x4000117d: __swrite in ROM
+--- 0x400592fe: __sflush_r in ROM
+--- 0x4005937a: _fflush_r in ROM
+--- 0x40186849: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+--- 0x4018fca7: __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429(inlined by) __sprint_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+--- 0x4018fb9e: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1774
+--- 0x4018689f: printf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c:56
+--- 0x400daf6b: serial_read_command at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/interface/serial_interface.c:164
+--- 0x400da7a3: app_main at /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c:136
+--- 0x4019a59b: main_task at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/app_startup.c:208
+--- 0x4009156d: vPortTaskWrapper at /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:139
+
