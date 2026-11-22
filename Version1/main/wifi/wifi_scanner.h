@@ -31,5 +31,7 @@ const wifi_network_t *wifi_scanner_get_network(int id);
 
 /* Déconnexion Wi-Fi de l'ESP32 */
 esp_err_t wifi_scanner_disconnect(void);
+void wifi_scanner_print_signal(void);
+void wifi_scanner_analyze_interference(void);
 
 #endif

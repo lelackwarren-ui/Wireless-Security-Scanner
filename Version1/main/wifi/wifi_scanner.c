@@ -1,6 +1,7 @@
 #include "wifi_scanner.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "esp_wifi.h"
 #include "esp_event.h"
 #include "esp_netif.h"
@@ -76,39 +77,98 @@ esp_err_t wifi_scanner_scan(void)
         return err;
     }
 
-    uint16_t count = 0;
-    ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&count));
+       uint16_t count = 0;
+    err = esp_wifi_scan_get_ap_num(&count);
+
+    if (err != ESP_OK) {
+        return err;
+    }
+
     if (count == 0) {
+        network_count = 0;
         serial_print_status("Aucun réseau Wi-Fi détecté.");
         return ESP_OK;
     }
 
-    wifi_ap_record_t *records = calloc(count, sizeof(wifi_ap_record_t));
-    if (records == NULL) return ESP_ERR_NO_MEM;
+    uint16_t limit = count > WIFI_MAX_NETWORKS
+                   ? WIFI_MAX_NETWORKS
+                   : count;
 
-    uint16_t found = count;
+    wifi_ap_record_t *records = calloc(limit, sizeof(wifi_ap_record_t));
+
+    if (records == NULL) {
+        return ESP_ERR_NO_MEM;
+    }
+
+    uint16_t found = limit;
     err = esp_wifi_scan_get_ap_records(&found, records);
+
     if (err == ESP_OK) {
+
+        network_count = found;
+
         serial_print_wifi_header();
+
         for (uint16_t i = 0; i < found; i++) {
+
             char bssid[18];
-            snprintf(bssid, sizeof(bssid), MACSTR, MAC2STR(records[i].bssid));
+
+            snprintf(
+                bssid,
+                sizeof(bssid),
+                MACSTR,
+                MAC2STR(records[i].bssid)
+            );
+
             const char *ssid = (const char *)records[i].ssid;
-            int rssi = records[i].rssi;
-            float distance = distance_estimate_m(rssi);
+
+            snprintf(
+                networks[i].ssid,
+                sizeof(networks[i].ssid),
+                "%s",
+                ssid[0] ? ssid : "<SSID caché>"
+            );
+
+            snprintf(
+                networks[i].bssid,
+                sizeof(networks[i].bssid),
+                "%s",
+                bssid
+            );
+
+            networks[i].id = i;
+            networks[i].channel = records[i].primary;
+            networks[i].rssi = records[i].rssi;
+
+            snprintf(
+                networks[i].security,
+                sizeof(networks[i].security),
+                "%s",
+                wifi_auth_name(records[i].authmode)
+            );
+
+            networks[i].distance =
+                distance_estimate_m(records[i].rssi);
 
             serial_print_wifi_network(
-                ssid[0] ? ssid : "<SSID caché>",
-                bssid,
-                records[i].primary,
-                rssi,
-                wifi_auth_name(records[i].authmode),
-                distance
+                networks[i].ssid,
+                networks[i].bssid,
+                networks[i].channel,
+                networks[i].rssi,
+                networks[i].security,
+                networks[i].distance
             );
-            signal_monitor_report("Wi-Fi", ssid[0] ? ssid : "<SSID caché>", rssi);
+
+            signal_monitor_report(
+                "Wi-Fi",
+                networks[i].ssid,
+                networks[i].rssi
+            );
+
             device_monitor_add_wifi();
         }
     }
+
     free(records);
     return err;
 }
@@ -198,4 +258,91 @@ esp_err_t wifi_scanner_disconnect(void)
     }
 
     return err;
+}
+
+void wifi_scanner_print_signal(void)
+{
+    if (network_count == 0) {
+        serial_print_status("Aucun résultat. Lancez un scan Wi-Fi.");
+        return;
+    }
+
+    printf("\n" COLOR_CYAN COLOR_BOLD);
+    printf("========== WIFI SIGNAL ANALYSIS ==========\n");
+    printf(COLOR_RESET);
+
+    for (int i = 0; i < network_count; i++) {
+
+        const wifi_network_t *network = &networks[i];
+
+        const char *color;
+
+        if (network->rssi >= -50)
+            color = COLOR_GREEN;
+        else if (network->rssi >= -70)
+            color = COLOR_YELLOW;
+        else
+            color = COLOR_RED;
+
+        printf(
+            "[%02d] %-25.25s | Canal: %2d | %s%d dBm%s\n",
+            network->id,
+            network->ssid,
+            network->channel,
+            color,
+            network->rssi,
+            COLOR_RESET
+        );
+    }
+
+    printf("==========================================\n");
+}
+
+void wifi_scanner_analyze_interference(void)
+{
+    if (network_count == 0) {
+        serial_print_status("Aucun résultat. Lancez un scan Wi-Fi.");
+        return;
+    }
+
+    int channel_count[14] = {0};
+
+    for (int i = 0; i < network_count; i++) {
+        int channel = networks[i].channel;
+
+        if (channel >= 1 && channel <= 13) {
+            channel_count[channel]++;
+        }
+    }
+
+    printf("\n" COLOR_CYAN COLOR_BOLD);
+    printf("======= WIFI CHANNEL ANALYSIS =======\n");
+    printf(COLOR_RESET);
+
+    for (int channel = 1; channel <= 13; channel++) {
+
+        if (channel_count[channel] == 0)
+            continue;
+
+        printf("Canal %2d : %d réseau(x) détecté(s) ",
+               channel, channel_count[channel]);
+
+        if (channel_count[channel] >= 4) {
+            printf(COLOR_RED "[DENSE]\n" COLOR_RESET);
+        }
+        else if (channel_count[channel] >= 2) {
+            printf(COLOR_YELLOW "[MODÉRÉ]\n" COLOR_RESET);
+        }
+        else {
+            printf(COLOR_GREEN "[FAIBLE]\n" COLOR_RESET);
+        }
+    }
+
+    printf("\n");
+    printf(COLOR_YELLOW
+           "Indicateur basé sur les réseaux détectés, "
+           "pas une mesure directe des interférences radio.\n"
+           COLOR_RESET);
+
+    printf("=====================================\n");
 }

@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdint.h>
 
+
 #include "driver/uart.h"
 #include "esp_vfs_dev.h"
 #include "freertos/FreeRTOS.h"
@@ -74,49 +75,28 @@ void serial_print_help(void)
     printf("============== COMMAND CENTER ==============\n");
     printf(COLOR_RESET);
 
-    printf("\nSYSTEM\n");
+    printf(COLOR_YELLOW "SYSTEM\n" COLOR_RESET);
+    printf("  help                  : Afficher les commandes\n");
+    printf("  clear                 : Nettoyer le terminal\n");
+    printf("  status                : Etat du systeme\n");
+    printf("  devices               : Appareils detectes\n");
+    printf("  connections           : Connexions gerees\n\n");
 
-    printf(COLOR_GREEN "help" COLOR_RESET);
-    printf("               : Afficher les commandes\n");
+    printf(COLOR_YELLOW "WIFI\n" COLOR_RESET);
+    printf("  wifi scan             : Scanner les reseaux\n");
+    printf("  wifi signal           : Analyser les signaux\n");
+    printf("  wifi interference     : Analyser les canaux\n");
+    printf("  wifi disconnect       : Deconnecter l'ESP32\n\n");
 
-    printf(COLOR_GREEN "clear" COLOR_RESET);
-    printf("              : Nettoyer le terminal\n");
+    printf(COLOR_YELLOW "BLUETOOTH\n" COLOR_RESET);
+    printf("  ble scan              : Scanner les appareils BLE\n");
+    printf("  ble signal            : Analyser les signaux BLE\n");
+    printf("  ble interference      : Observer l'activite BLE\n\n");
 
-    printf(COLOR_GREEN "version" COLOR_RESET);
-    printf("            : Version du programme\n");
-
-    printf(COLOR_GREEN "status" COLOR_RESET);
-    printf("             : Etat du systeme\n");
-
-    printf("\nWIFI\n");
-
-    printf(COLOR_GREEN "wifi scan" COLOR_RESET);
-    printf("         : Scanner les reseaux Wi-Fi\n");
-
-    printf(COLOR_GREEN "wifi disconnect" COLOR_RESET);
-    printf("  : Deconnecter l'ESP32 du Wi-Fi\n");
-
-    printf("\nBLUETOOTH\n");
-
-    printf(COLOR_GREEN "ble scan" COLOR_RESET);
-    printf("          : Scanner les appareils BLE\n");
-
-    printf("\nMONITORING\n");
-
-    printf(COLOR_GREEN "devices" COLOR_RESET);
-    printf("            : Afficher les appareils detectes\n");
-
-    printf("\n");
-
-    printf(COLOR_YELLOW
-           "Les autres commandes seront ajoutees progressivement.\n"
-           COLOR_RESET);
-
-    printf(COLOR_CYAN
-           "============================================\n"
-           COLOR_RESET);
+    printf(COLOR_CYAN);
+    printf("=============================================\n");
+    printf(COLOR_RESET);
 }
-
 /* =====================================================
    MESSAGES
    ===================================================== */
