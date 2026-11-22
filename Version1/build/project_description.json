@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "W_Tech_Wireless_Scanner",
-    "project_version":    "a7e3ab4-dirty",
+    "project_version":    "54fa7de-dirty",
     "project_path":       "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1",
     "idf_path":           "/home/ubuntu-lwk/.espressif/v5.4.4/esp-idf",
     "build_dir":          "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build",
@@ -1205,13 +1205,13 @@
             "dir": "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_wifi", "esp_event", "esp_netif", "nvs_flash", "bt" ],
-            "priv_reqs": [],
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_uart", "esp_wifi", "bt", "nvs_flash", "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/wifi/wifi_scanner.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/bluetooth/bluetooth_scanner.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/connection/connection_manager.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/estimator/distance_estimator.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/interface/serial_interface.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/logger/logger.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/device_monitor.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/signal_monitor.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/connection_monitor.c" ],
-            "include_dirs": [ ".", "wifi", "bluetooth", "connection", "estimator", "interface", "logger", "monitor" ]
+            "sources": [ "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/main.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/interface/serial_interface.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/wifi/wifi_scanner.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/bluetooth/bluetooth_scanner.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/connection/connection_manager.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/estimator/distance_estimator.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/device_monitor.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/connection_monitor.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/monitor/signal_monitor.c", "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main/logger/logger.c" ],
+            "include_dirs": [ ".", "interface", "wifi", "bluetooth", "connection", "estimator", "monitor", "logger" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2868,11 +2868,11 @@
             "prefix": "idf",
             "dir": "/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/main",
             "lib": "__idf_main",
-            "reqs": [ "esp_wifi", "esp_event", "esp_netif", "nvs_flash", "bt" ],
-            "priv_reqs": [],
+            "reqs": [],
+            "priv_reqs": [ "esp_driver_uart", "esp_wifi", "bt", "nvs_flash", "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ ".", "wifi", "bluetooth", "connection", "estimator", "interface", "logger", "monitor" ]
+            "include_dirs": [ ".", "interface", "wifi", "bluetooth", "connection", "estimator", "monitor", "logger" ]
         }
     },
     "debug_prefix_map_gdbinit": "",
