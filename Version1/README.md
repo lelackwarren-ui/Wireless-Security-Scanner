@@ -1,4 +1,4 @@
-# W-Tech Wireless Security Scanner
+#  Wireless Security Scanner
 
 **Scanner passif Wi-Fi et Bluetooth Low Energy (BLE) pour ESP32-WROOM-32.**
 
@@ -8,7 +8,7 @@ Développé en **C avec ESP-IDF v5.4.4**, ce projet permet de détecter et d'obs
 
 ## Présentation
 
-W-Tech Wireless Security Scanner est un projet de découverte et d'observation des technologies sans fil.
+Wireless Security Scanner est un projet de découverte et d'observation des technologies sans fil.
 
 L'objectif est de développer un outil embarqué capable de collecter des informations sur l'environnement radio, de présenter les résultats et de fournir quelques indicateurs simples sur la qualité des signaux détectés.
 

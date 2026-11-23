@@ -4,7 +4,7 @@ W-Tech Wireless Security Scanner est un projet basé sur ESP32, développé en C
 
 <div align="center">
 
-# 📡 W-Tech Wireless Security Scanner
+# 📡 Wireless Security Scanner
 
 ### Outil portable de détection et d'observation des réseaux sans fil basé sur ESP32.
 
