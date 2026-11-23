@@ -245,3 +245,4 @@ La documentation détaillée est disponible dans le dossier [`docs/`](docs/) :
 **Version :** 1.0  
 **Plateforme :** ESP32-WROOM-32  
 **Développement :** C / ESP-IDF v5.4.4
+**Auteur :** LELACK Warren Kenji
