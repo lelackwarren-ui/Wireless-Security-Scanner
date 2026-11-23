@@ -206,7 +206,7 @@ void app_main(void)
     serial_interface_init();
 
     serial_clear();
-    serial_print_banner();
+    
 
     /* Initialisation Wi-Fi une seule fois */
     esp_err_t wifi_status = wifi_scanner_init();
@@ -225,6 +225,8 @@ void app_main(void)
     } else {
         serial_print_error("Initialisation Bluetooth échouée.");
     }
+
+    serial_print_banner();
 
     printf("\nTapez " COLOR_YELLOW "help" COLOR_RESET
            " pour afficher les commandes.\n");
