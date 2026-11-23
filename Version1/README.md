@@ -241,7 +241,7 @@ La documentation détaillée est disponible dans le dossier [`docs/`](docs/) :
 
 ---
 
-**Projet :** W-Tech Wireless Security Scanner  
+**Projet :** Wireless Security Scanner  
 **Version :** 1.0  
 **Plateforme :** ESP32-WROOM-32  
 **Développement :** C / ESP-IDF v5.4.4
