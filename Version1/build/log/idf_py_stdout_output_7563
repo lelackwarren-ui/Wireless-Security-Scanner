@@ -1,0 +1,105 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6280
+load:0x40078000,len:15736
+load:0x40080400,len:4
+load:0x40080404,len:3920
+entry 0x40080648
+[0;32mI (29) boot: ESP-IDF v5.4.4 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Nov 22 2026 01:41:07[0m
+[0;32mI (30) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00180000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=2c3dch (181212) map[0m
+[0;32mI (150) esp_image: segment 1: paddr=0003c404 vaddr=3ffbdb60 size=03c14h ( 15380) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=00040020 vaddr=400d0020 size=d4658h (869976) map[0m
+[0;32mI (453) esp_image: segment 3: paddr=00114680 vaddr=3ffc1774 size=02148h (  8520) load[0m
+[0;32mI (457) esp_image: segment 4: paddr=001167d0 vaddr=40080000 size=19ee4h (106212) load[0m
+[0;32mI (498) esp_image: segment 5: paddr=001306bc vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (512) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (512) boot: Disabling RNG early entropy source...[0m
+[0;32mI (522) cpu_start: Multicore app[0m
+[0;32mI (530) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (531) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (533) app_init: Application information:[0m
+[0;32mI (536) app_init: Project name:     W_Tech_Wireless_Scanner[0m
+[0;32mI (542) app_init: App version:      ba170f3-dirty[0m
+[0;32mI (546) app_init: Compile time:     Nov 23 2026 07:43:26[0m
+[0;32mI (551) app_init: ELF file SHA256:  93cfc57fa...[0m
+[0;32mI (555) app_init: ESP-IDF:          v5.4.4[0m
+[0;32mI (559) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (563) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (567) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (571) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (577) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (582) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (587) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (593) heap_init: At 3FFCBE30 len 000141D0 (80 KiB): DRAM[0m
+[0;32mI (598) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (603) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (609) heap_init: At 40099EE4 len 0000611C (24 KiB): IRAM[0m
+[0;32mI (616) spi_flash: detected chip: generic[0m
+[0;32mI (618) spi_flash: flash io: dio[0m
+[0;33mW (621) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (634) coexist: coex firmware version: 2de0784[0m
+[0;32mI (638) main_task: Started on CPU0[0m
+[0;32mI (648) main_task: Calling app_main()[0m
+[2J[H
+[36m[1m============================================
+       W-TECH WIRELESS SECURITY SCANNER     
+                 VERSION 1                  
+============================================
+[0m[32mSYSTEM STATUS : READY
+[0mHARDWARE : ESP32-WROOM-32
+INTERFACE : SERIAL TERMINAL
+MODE : PASSIVE SCANNING
+
+[0;32mI (698) wifi:wifi driver task: 3ffd032c, prio:23, stack:6656, core=0[0m
+[0;32mI (698) wifi:wifi firmware version: 8896d66[0m
+[0;32mI (698) wifi:wifi certification version: v7.0[0m
+[0;32mI (708) wifi:config NVS flash: enabled[0m
+[0;32mI (708) wifi:config nano formatting: disabled[0m
+[0;32mI (718) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (718) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (718) wifi:Init management short buffer num: 32[0m
+[0;32mI (728) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (728) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (738) wifi:Init static rx buffer num: 10[0m
+[0;32mI (738) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (748) wifi_init: rx ba win: 6[0m
+[0;32mI (748) wifi_init: accept mbox: 6[0m
+[0;32mI (748) wifi_init: tcpip mbox: 32[0m
+[0;32mI (748) wifi_init: udp mbox: 6[0m
+[0;32mI (748) wifi_init: tcp mbox: 6[0m
+[0;32mI (758) wifi_init: tcp tx win: 5760[0m
+[0;32mI (758) wifi_init: tcp rx win: 5760[0m
+[0;32mI (768) wifi_init: tcp mss: 1440[0m
+[0;32mI (768) phy_init: phy_version 4863,a3a4459,Oct 28 2025,14:30:06[0m
+[0;32mI (858) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (878) wifi:mode : sta (20:50:0d:e4:c2:f0)[0m
+[0;32mI (888) wifi:enable tsf[0m
+[0;32mI (888) W-TECH: Scanner Wi-Fi initialisé.[0m
+[32m[SUCCESS] [0mScanner Wi-Fi initialisé.
+[0;32mI (888) BTDM_INIT: BT controller compile version [440e0f9][0m
+[0;32mI (888) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (908) BTDM_INIT: Bluetooth MAC: 20:50:0d:e4:c2:f2[0m
+[0;32mI (1218) W-TECH: Scanner BLE initialisé.[0m
+[32m[SUCCESS] [0mScanner Bluetooth initialisé.
+
+Tapez [33mhelp[0m pour afficher les commandes.
+
+[32mW-TECH@ESP32[0m:~$ [B[B[B[B        

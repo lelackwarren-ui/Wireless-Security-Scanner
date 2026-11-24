@@ -1,0 +1,69 @@
+[1/5] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/partition_table/partition-table.bin /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/W_Tech_Wireless_Scanner.bin
+W_Tech_Wireless_Scanner.bin binary size 0xb7e80 bytes. Smallest app partition is 0x180000 bytes. 0xc8180 bytes (52%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/bootloader.bin
+Bootloader binary size 0x65b0 bytes. 0xa50 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py && /home/ubuntu-lwk/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/ubuntu-lwk/.espressif/v5.4.4/esp-idf -D "SERIAL_TOOL=/home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python;;/home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build -P /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 W_Tech_Wireless_Scanner.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.14.0
+Serial port /dev/ttyUSB0
+Connecting......
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 20:50:0d:e4:c2:f0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000c7fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26032 bytes to 16420...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007594... (100 %)
+Wrote 26032 bytes (16420 compressed) at 0x00001000 in 0.6 seconds (effective 341.1 kbit/s)...
+Hash of data verified.
+Compressed 753280 bytes to 453915...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001d1e2... (7 %)
+Writing at 0x00029ed9... (10 %)
+Writing at 0x000326ed... (14 %)
+Writing at 0x00037fa7... (17 %)
+Writing at 0x0003dfe0... (21 %)
+Writing at 0x00043db4... (25 %)
+Writing at 0x0004981e... (28 %)
+Writing at 0x0004f26d... (32 %)
+Writing at 0x00055823... (35 %)
+Writing at 0x0005bba7... (39 %)
+Writing at 0x00061bef... (42 %)
+Writing at 0x00067c01... (46 %)
+Writing at 0x0006db8a... (50 %)
+Writing at 0x0007390e... (53 %)
+Writing at 0x000792c2... (57 %)
+Writing at 0x0007eba3... (60 %)
+Writing at 0x00084368... (64 %)
+Writing at 0x00089df8... (67 %)
+Writing at 0x0008f791... (71 %)
+Writing at 0x0009528b... (75 %)
+Writing at 0x0009b8a8... (78 %)
+Writing at 0x000a35ff... (82 %)
+Writing at 0x000ab065... (85 %)
+Writing at 0x000b2971... (89 %)
+Writing at 0x000b81ec... (92 %)
+Writing at 0x000bdb4b... (96 %)
+Writing at 0x000c3d5a... (100 %)
+Wrote 753280 bytes (453915 compressed) at 0x00010000 in 11.3 seconds (effective 531.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 882.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

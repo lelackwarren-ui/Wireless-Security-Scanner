@@ -1,0 +1,86 @@
+[1/5] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/partition_table/partition-table.bin /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/W_Tech_Wireless_Scanner.bin
+W_Tech_Wireless_Scanner.bin binary size 0x120700 bytes. Smallest app partition is 0x180000 bytes. 0x5f900 bytes (25%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/esp-idf/esptool_py && /home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build/bootloader/bootloader.bin
+Bootloader binary size 0x65b0 bytes. 0xa50 bytes (9%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py && /home/ubuntu-lwk/.espressif/tools/cmake/3.30.2/bin/cmake -D IDF_PATH=/home/ubuntu-lwk/.espressif/v5.4.4/esp-idf -D "SERIAL_TOOL=/home/ubuntu-lwk/.espressif/tools/python/v5.4.4/venv/bin/python;;/home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/ubuntu-lwk/Documents/C/Wireless-Security-Scanner/Version1/build -P /home/ubuntu-lwk/.espressif/v5.4.4/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 W_Tech_Wireless_Scanner.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.14.0
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 20:50:0d:e4:c2:f0
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00130fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26032 bytes to 16420...
+Writing at 0x00001000... (50 %)
+Writing at 0x00007594... (100 %)
+Wrote 26032 bytes (16420 compressed) at 0x00001000 in 0.6 seconds (effective 343.3 kbit/s)...
+Hash of data verified.
+Compressed 1181440 bytes to 734390...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d1f1... (4 %)
+Writing at 0x0002a664... (6 %)
+Writing at 0x00033f8d... (8 %)
+Writing at 0x0003f3a6... (11 %)
+Writing at 0x00045bf2... (13 %)
+Writing at 0x0004bbfc... (15 %)
+Writing at 0x00051adc... (17 %)
+Writing at 0x00057698... (20 %)
+Writing at 0x0005d250... (22 %)
+Writing at 0x00062d13... (24 %)
+Writing at 0x000692b0... (26 %)
+Writing at 0x0006f78f... (28 %)
+Writing at 0x000759ad... (31 %)
+Writing at 0x0007b90e... (33 %)
+Writing at 0x00081983... (35 %)
+Writing at 0x0008775e... (37 %)
+Writing at 0x0008d84f... (40 %)
+Writing at 0x00093912... (42 %)
+Writing at 0x00099e75... (44 %)
+Writing at 0x0009f640... (46 %)
+Writing at 0x000a49c9... (48 %)
+Writing at 0x000aa51c... (51 %)
+Writing at 0x000b008f... (53 %)
+Writing at 0x000b5849... (55 %)
+Writing at 0x000bb118... (57 %)
+Writing at 0x000c0d56... (60 %)
+Writing at 0x000c6820... (62 %)
+Writing at 0x000cc41c... (64 %)
+Writing at 0x000d20a4... (66 %)
+Writing at 0x000d7a29... (68 %)
+Writing at 0x000dd6b2... (71 %)
+Writing at 0x000e343d... (73 %)
+Writing at 0x000e8d98... (75 %)
+Writing at 0x000ee7f6... (77 %)
+Writing at 0x000f40bc... (80 %)
+Writing at 0x000f9aae... (82 %)
+Writing at 0x00102860... (84 %)
+Writing at 0x00108789... (86 %)
+Writing at 0x0010dd72... (88 %)
+Writing at 0x00113371... (91 %)
+Writing at 0x0011a239... (93 %)
+Writing at 0x0011fdb9... (95 %)
+Writing at 0x00125482... (97 %)
+Writing at 0x0012b660... (100 %)
+Wrote 1181440 bytes (734390 compressed) at 0x00010000 in 18.2 seconds (effective 520.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.0 seconds (effective 885.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
