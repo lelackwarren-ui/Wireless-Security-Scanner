@@ -4,7 +4,7 @@
 
 Développé en **C avec ESP-IDF v5.4.4**, ce projet permet de détecter et d'observer les réseaux Wi-Fi et les appareils Bluetooth Low Energy à proximité grâce à une interface interactive accessible depuis le moniteur série.
 
-Voici un site sur la realisation du projet : [`WScan`](https://lelackwarren-ui.github.io/WScan/`).
+Voici un site sur la realisation du projet : [`WScan`](https://lelackwarren-ui.github.io/WScan/).
 
 ---
 
